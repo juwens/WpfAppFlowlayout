@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfAppFlowlayout.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppFlowlayout"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="150" Width="800">
+    <Grid>
+        <FlowDocumentPageViewer>
+            <FlowDocument Name="flowDoc" PageWidth="8.5in" PageHeight="11in">
+                <Paragraph>Hello World!</Paragraph>
+                <Table x:Name="tbl" CellSpacing="0" BorderThickness="0,0,1,1" BorderBrush="Black">
+                    <Table.Columns>
+                        <TableColumn Name="A" />
+                        <TableColumn Name="B" />
+                        <TableColumn Name="C" />
+                        <TableColumn Name="D" />
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow>
+                            <TableRow.Resources>
+                                <Style TargetType="TableCell">
+                                    <Setter Property="BorderThickness" Value="1,1,0,0" />
+                                    <Setter Property="BorderBrush" Value="Black" />
+                                </Style>
+                            </TableRow.Resources>
+                            <TableCell>
+                                <Paragraph>Heading 1</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Heading 2</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Heading 3</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Heading 4</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+            </FlowDocument>
+        </FlowDocumentPageViewer>
+    </Grid>
+</Window>
