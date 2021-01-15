@@ -5,12 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppFlowlayout"
         mc:Ignorable="d"
-        Title="MainWindow" Height="150" Width="800">
+        Title="MainWindow" Height="15cm" Width="35cm">
     <Grid>
-        <FlowDocumentPageViewer>
-            <FlowDocument Name="flowDoc" PageWidth="8.5in" PageHeight="11in">
-                <Paragraph>Hello World!</Paragraph>
-                <Table x:Name="tbl" CellSpacing="0" BorderThickness="0,0,1,1" BorderBrush="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="_Save" Click="Save_Click" />
+            <MenuItem Header="_Print" Click="Print_Click" />
+        </Menu>
+        <FlowDocumentPageViewer Grid.Row="1" Name="flowDocReader" Background="AliceBlue">
+            <FlowDocument Name="flowDoc" PageWidth="8.5in" PageHeight="11in" ColumnWidth="8.5in">
+                <Paragraph>
+                    <Bold>
+                        <Run Text="Heading"/>
+                    </Bold>
+                </Paragraph>
+
+                <Table CellSpacing="0" BorderThickness="0,0,1,1" BorderBrush="Black">
                     <Table.Columns>
                         <TableColumn Name="A" />
                         <TableColumn Name="B" />
